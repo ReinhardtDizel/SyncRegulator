@@ -1,0 +1,50 @@
+{
+  "name": "SyncRegulator",
+  "version": "1.0.0",
+  "description": "Speed synchronization and tension regulation library. Provides encoder pulse measurement, moving average filtering, impulse normalization, PD-regulator with dead zone, and auto-calibration. Includes abstract SyncController interface for custom regulation laws.",
+  "keywords": [
+    "encoder",
+    "speed",
+    "synchronization",
+    "regulator",
+    "PD",
+    "PID",
+    "normalization",
+    "calibration",
+    "motor",
+    "industrial"
+  ],
+  "authors": [
+    {
+      "name": "Reinhardt Michael",
+      "email": "dizel882@gmail.com",
+      "url": "https://github.com/ReinhardtDizel",
+      "maintainer": true
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReinhardtDizel/SyncRegulator.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ReinhardtDizel/SyncRegulator",
+  "frameworks": "arduino",
+  "platforms": "*",
+  "headers": ["SyncRegulator.h"],
+  "export": {
+    "include": ["src"],
+    "exclude": ["examples", ".git"]
+  },
+  "examples": [
+    {
+      "name": "Basic Sync",
+      "base": "examples/basic_sync",
+      "files": ["examples/basic_sync/basic_sync.ino"]
+    }
+  ],
+  "dependencies": [],
+  "build": {
+    "flags": "-Wall -Wextra",
+    "libArchive": true
+  }
+}

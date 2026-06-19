@@ -1,0 +1,16 @@
+### `keywords.txt`
+SyncRegulator KEYWORD1
+EncoderReader KEYWORD2
+Normalizer KEYWORD2
+PDRegulator KEYWORD2
+SyncController KEYWORD2
+AutoCalibrator KEYWORD2
+MovingAverage KEYWORD2
+PDParams KEYWORD2
+compute KEYWORD2
+normalize KEYWORD2
+getSpeed KEYWORD2
+getRawImpulses KEYWORD2
+begin KEYWORD2
+update KEYWORD2
+reset KEYWORD2
