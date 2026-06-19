@@ -27,14 +27,14 @@ public:
 
     void begin() {
         _hal.pinModeInputPullup(_pin);
-        _hal.attachInterrupt(_pin, []() {
+        _hal.attachInterruptExt(_pin, []() {
             if (instance()) instance()->_counter++;
-        }, SyncHAL::RISING);
+        }, SyncHAL::EDGE_RISING);
         _lastTime = _hal.millis();
         _lastCounter = 0;
-        _hal.noInterrupts();
+        _hal.disableInterrupts();
         _counter = 0;
-        _hal.interrupts();
+        _hal.enableInterrupts();
         instance() = this;
     }
 
@@ -43,9 +43,9 @@ public:
         if (now - _lastTime < _intervalMs) return false;
 
         uint32_t cur;
-        _hal.noInterrupts();
+        _hal.disableInterrupts();
         cur = _counter;
-        _hal.interrupts();
+        _hal.enableInterrupts();
 
         _delta = cur - _lastCounter;
         _lastCounter = cur;
