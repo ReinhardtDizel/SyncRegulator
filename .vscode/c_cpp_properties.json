@@ -3,13 +3,19 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "C:/Program Files/Microchip/xc8/v2.36/avr/avr/include/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
-            ]
+                "_UNICODE",
+                "F_CPU=10000000UL"
+            ],
+            "compilerPath": "C:/Program Files/Microchip/xc8/v2.36/avr/bin/avr-gcc.exe",
+            "cStandard": "gnu99",
+            "cppStandard": "gnu++11",
+            "intelliSenseMode": "gcc-x86"
         }
     ],
     "version": 4
