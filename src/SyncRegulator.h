@@ -5,11 +5,6 @@
 #ifndef SYNCREGULATOR_H
 #define SYNCREGULATOR_H
 
-// Подключаем нужный HAL
-#if defined(ARDUINO)
-    #include "hal/SyncHAL_Arduino.h"
-#endif
-
 #include "MovingAverage.h"
 #include "Normalizer.h"
 #include "EncoderReader.h"
