@@ -1,0 +1,26 @@
+# VS Code
+.vscode/
+*.code-workspace
+
+# Compiled files
+*.o
+*.hex
+*.elf
+*.bin
+
+# Arduino temporary files
+*.ino.cpp
+*.ino.d
+
+# PlatformIO
+.pio/
+build/
+
+# Backup files
+*~
+*.bak
+*.swp
+
+# OS junk
+.DS_Store
+Thumbs.db

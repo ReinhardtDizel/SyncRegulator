@@ -18,6 +18,10 @@ private:
     const uint32_t _intervalMs;
     SyncHAL& _hal;
 
+    static void isrHandler() {
+        if (instance()) instance()->_counter++;
+    }
+
 public:
     EncoderReader(SyncHAL& hal, uint8_t pin, int32_t coeffMicro, int32_t offsetMilli,
                   uint32_t intervalMs = 500)
@@ -27,9 +31,7 @@ public:
 
     void begin() {
         _hal.pinModeInputPullup(_pin);
-        _hal.attachInterruptExt(_pin, []() {
-            if (instance()) instance()->_counter++;
-        }, SyncHAL::EDGE_RISING);
+        _hal.attachInterruptExt(_pin, isrHandler, SyncHAL::EDGE_RISING);
         _lastTime = _hal.millis();
         _lastCounter = 0;
         _hal.disableInterrupts();
