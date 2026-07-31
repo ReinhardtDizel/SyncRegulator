@@ -32,6 +32,14 @@ public:
      */
     virtual int16_t compute(int32_t py_norm, int32_t pk_raw,
                             const void* params) = 0;
+
+    /**
+     * @brief Сбросить внутреннее состояние регулятора.
+     *
+     * По умолчанию ничего не делает. Наследники переопределяют
+     * для сброса мёртвой зоны, фильтров, интеграторов и т.д.
+     */
+    virtual void reset() {}
 };
 
 #endif // SYNCCONTROLLER_H

@@ -11,5 +11,6 @@
 #include "SyncController.h"
 #include "PDRegulator.h"
 #include "AutoCalibrator.h"
+#include "SyncSystem.h"
 
 #endif

@@ -13,11 +13,11 @@
 
 class AutoCalibrator {
 private:
-    int32_t   _sumPy, _sumPk;
-    int       _sampleCount;
-    bool      _active;
+    int32_t     _sumPy, _sumPk;
+    int         _sampleCount;
+    bool        _active;
     Normalizer& _normalizer;
-    const int MAX_SAMPLES = 20;
+    static const int MAX_SAMPLES = 20;
 
 public:
     AutoCalibrator(Normalizer& normalizer)
@@ -45,11 +45,23 @@ public:
 
     /** Прогресс калибровки в процентах (0..100) */
     int progress() const {
+        if (MAX_SAMPLES == 0) return 0;
         return (_sampleCount * 100) / MAX_SAMPLES;
     }
 
     /** Активна ли калибровка */
     bool isActive() const { return _active; }
+
+    /** Количество собранных выборок */
+    int sampleCount() const { return _sampleCount; }
+
+    /** Прервать калибровку без сохранения результата */
+    void abort() {
+        _active = false;
+        _sampleCount = 0;
+        _sumPy = 0;
+        _sumPk = 0;
+    }
 
 private:
     void finish() {
