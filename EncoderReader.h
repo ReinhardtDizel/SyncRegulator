@@ -7,18 +7,16 @@
  * вызывать в любой момент, скорость будет пересчитана корректно.
  *
  * Зависимости:
- *   - SyncHAL.h           (GPIO + прерывания)
- *   - core/TimeProvider.h (время + атомарные секции)
- *   - MovingAverage.h     (фильтр скорости)
+ *   - RegulatorCore    (TimeProvider + MovingAverage)
+ *   - SyncHAL.h        (GPIO + прерывания)
  */
 
 #ifndef ENCODER_READER_H
 #define ENCODER_READER_H
 
 #include <stdint.h>
-#include "MovingAverage.h"
+#include <RegulatorCore.h>
 #include "SyncHAL.h"
-#include "core/TimeProvider.h"
 
 class EncoderReader {
 public:

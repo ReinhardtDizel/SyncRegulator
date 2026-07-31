@@ -20,8 +20,8 @@
 #define PDREGULATOR_H
 
 #include <stdint.h>
+#include <RegulatorCore.h>
 #include "SyncController.h"
-#include "MovingAverage.h"
 
 /**
  * @brief Параметры ПД-регулятора.

@@ -6,22 +6,22 @@
  * Вызывается периодически из main() — сам следит за интервалом.
  *
  * Зависимости:
+ *   - RegulatorCore
  *   - EncoderReader.h
  *   - Normalizer.h
  *   - SyncController.h
  *   - AutoCalibrator.h
- *   - core/TimeProvider.h
  */
 
 #ifndef SYNC_SYSTEM_H
 #define SYNC_SYSTEM_H
 
 #include <stdint.h>
+#include <RegulatorCore.h>
 #include "EncoderReader.h"
 #include "Normalizer.h"
 #include "SyncController.h"
 #include "AutoCalibrator.h"
-#include "core/TimeProvider.h"
 
 class SyncSystem {
 private:

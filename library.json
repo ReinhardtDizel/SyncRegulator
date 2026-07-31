@@ -1,0 +1,21 @@
+{
+  "name": "SyncRegulator",
+  "version": "1.0.0",
+  "description": "Speed synchronization and tension regulation library for embedded systems",
+  "keywords": ["encoder", "synchronization", "regulator", "tension", "motor-control"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReinhardtDizel/SyncRegulator.git"
+  },
+  "authors": [
+    {
+      "name": "Reinhardt Dizel"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ReinhardtDizel/RegulatorCore": "^1.0.0"
+  },
+  "frameworks": "*",
+  "platforms": "*"
+}
