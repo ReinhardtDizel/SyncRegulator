@@ -60,8 +60,9 @@ private:
 
 
 public:
-    /**
     void capture_isr() { _counter++; }
+
+    /**
      * @brief Конструктор.
      *
      * @param hal         Абстракция GPIO и прерываний.
