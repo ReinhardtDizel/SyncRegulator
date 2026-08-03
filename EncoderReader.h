@@ -17,6 +17,7 @@
 #include <stdint.h>
 #include <RegulatorCore.h>
 #include "SyncHAL.h"
+#include "SyncHAL.h"
 
 class EncoderReader {
 public:
