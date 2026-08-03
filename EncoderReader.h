@@ -29,14 +29,14 @@ private:
     static EncoderReader* _instances[MAX_ENCODERS];
     static uint8_t        _nextIndex;
 
-    static void isr0() { if (_instances[0]) _instances[0]->_isr(); }
-    static void isr1() { if (_instances[1]) _instances[1]->_isr(); }
-    static void isr2() { if (_instances[2]) _instances[2]->_isr(); }
-    static void isr3() { if (_instances[3]) _instances[3]->_isr(); }
-    static void isr4() { if (_instances[4]) _instances[4]->_isr(); }
-    static void isr5() { if (_instances[5]) _instances[5]->_isr(); }
-    static void isr6() { if (_instances[6]) _instances[6]->_isr(); }
-    static void isr7() { if (_instances[7]) _instances[7]->_isr(); }
+    static void isr0() { if (_instances[0]) _instances[0]->capture_isr(); }
+    static void isr1() { if (_instances[1]) _instances[1]->capture_isr(); }
+    static void isr2() { if (_instances[2]) _instances[2]->capture_isr(); }
+    static void isr3() { if (_instances[3]) _instances[3]->capture_isr(); }
+    static void isr4() { if (_instances[4]) _instances[4]->capture_isr(); }
+    static void isr5() { if (_instances[5]) _instances[5]->capture_isr(); }
+    static void isr6() { if (_instances[6]) _instances[6]->capture_isr(); }
+    static void isr7() { if (_instances[7]) _instances[7]->capture_isr(); }
 
     typedef void (*IsrFunc)();
     static const IsrFunc _dispatchers[MAX_ENCODERS];
@@ -58,10 +58,10 @@ private:
     MovingAverage<4> _filter;
     bool _begun;
 
-    void _isr() { _counter++; }
 
 public:
     /**
+    void capture_isr() { _counter++; }
      * @brief Конструктор.
      *
      * @param hal         Абстракция GPIO и прерываний.
