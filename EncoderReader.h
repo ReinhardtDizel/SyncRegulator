@@ -21,13 +21,13 @@
 
 class EncoderReader {
 public:
+    static EncoderReader* _instances[MAX_ENCODERS];
+    static uint8_t        _nextIndex;
     /** Максимальное количество экземпляров */
     static const uint8_t MAX_ENCODERS = 8;
 
 private:
     // --- Статическая диспетчеризация прерываний ---
-    static EncoderReader* _instances[MAX_ENCODERS];
-    static uint8_t        _nextIndex;
 
     static void isr0() { if (_instances[0]) _instances[0]->capture_isr(); }
     static void isr1() { if (_instances[1]) _instances[1]->capture_isr(); }
